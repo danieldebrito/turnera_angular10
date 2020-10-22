@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+    <a class="d" routerLink="/home">
+        <img src="/assets/logo.png" height="40" alt="">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/quienesSomos'>Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/planes'>Planes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/rrhh'>Recursos Humanos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/contacto'>Contacto</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" *ngIf="user$ | async as user; else login">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="avatar" src="/assets/avatar/dott.jpg" alt="" srcset=""> {{ user.email }}
+                </a>
+                <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink='/pacientePerfil'>Mi perfil</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink='/turnoReserva'>Reservar Turno</a>
+                    <a class="dropdown-item" routerLink='/turnoListado'>Consultar / Anular Turno</a>
+                    <a class="dropdown-item" routerLink='/historiaClinica'>Historia Clinica</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="" (click)="onLogout()">Logout</a>
+                </div>
+            </li>
+        </ul>
+        <ng-template #login>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/registro">Registro</a>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</nav>

@@ -1,0 +1,17 @@
+<div class="container p-2">
+    <div class="row">
+        <div class="col-sm-2 text-align p-2" *ngFor="let item of turnos | paginate: { itemsPerPage: 24, currentPage: p }">
+            <mat-card>
+                <mat-card-title>
+                    {{ item.dia }} {{ item.fecha.getDate().toString() }}/{{ (item.fecha.getMonth() + 1).toString() }}
+                </mat-card-title>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" matStepperNext>
+                    {{ item.fecha.getHours() }}:{{ item.fecha.getMinutes() }}
+                </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <pagination-controls (click)="scrollTop()" (pageChange)="p = $event" previousLabel="Previo" nextLabel="Siguiente"></pagination-controls>
+    </div>
+</div>

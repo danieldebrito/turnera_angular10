@@ -1,0 +1,23 @@
+<div class="container p-3">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Elegir Profesional y Especialidad</ng-template>
+            <div class="row">
+                <div class="col-sm-7">
+                    <app-turnos-reservar></app-turnos-reservar>
+                </div>
+                <div class="col-sm-5">
+                    <app-user-ficha></app-user-ficha>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <ng-template matStepLabel>Elija un Turno Disponible</ng-template>
+            <app-turnos-grid></app-turnos-grid>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Confirme su Turno</ng-template>
+            <app-turno-confirmacion></app-turno-confirmacion>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

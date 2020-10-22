@@ -1,0 +1,64 @@
+<div class="container mt-5">
+    <div class="register-form">
+        <mat-label><strong><h1>Completá tus datos</h1></strong></mat-label>
+        <form [formGroup]="registerForm" class="form-signin mt-3" (ngSubmit)="onRegister()">
+            <mat-card>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field class="full-width">
+                                <mat-label>Nombre</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="full-width">
+                                <mat-label>Apellido</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field class="full-width">
+                                <mat-label>DNI</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field class="full-width">
+                                <mat-label>e-mail</mat-label>
+                                <input matInput formControlName="email">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="full-width">
+                                <mat-label>Clave</mat-label>
+                                <input matInput formControlName="password">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div>
+                            <button type="submit" mat-raised-button color="primary">Crear Cuenta</button>
+                        </div>
+                        <p class="form-group mt-2"> Ya tenes cuenta ? <a routerLink="/login"> Ingresá </a></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-3 text-muted">
+                            Al registrarme, declaro que soy mayor de edad y acepto los Términos y condiciones y las
+                            Políticas de privacidad de Clinica OnLine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

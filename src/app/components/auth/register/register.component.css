@@ -1,0 +1,20 @@
+.register-form {
+    min-width: 150px;
+    width: 100%;
+    max-width: 630px;
+    padding: 15px;
+    margin: auto;
+    
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .middle-width {
+    width: 50%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
